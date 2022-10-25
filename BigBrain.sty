@@ -108,6 +108,13 @@
     tabsize=2
 }
 
+\newenvironment{codesnip}{
+\lstset{style=python}
+\begin{lstlisting}[language=Python]
+}
+{\end{lstlisting}
+}
+
 \newenvironment{solution}[1][]{
 \vspace{0.1in}
 \color{BlueViolet}#1
@@ -115,6 +122,7 @@
 {
 \color{black}
 }
+
 \newenvironment{solproof}{
 \color{BlueViolet}\begin{proof}
 }
