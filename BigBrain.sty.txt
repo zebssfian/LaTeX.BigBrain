@@ -1,0 +1,125 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{BigBrain}
+
+\usepackage{mathrsfs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{python}
+\usepackage{listings}
+\usepackage[letterpaper, portrait, margin=1in]{geometry}
+\usepackage{graphicx}
+%\usepackage{xcolor}
+\usepackage[shortlabels]{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks,allcolors=blue]{hyperref}
+\usepackage{expl3}
+\usepackage{circuitikz}
+\usepackage{esvect}
+\usepackage{pdfpages}
+\usepackage{soul}
+\usepackage{bbm}
+
+
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{remark}{Remark}
+\newtheorem*{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{claim}{Claim}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\textC}{\(\C\)}
+\newcommand{\textR}{\(\R\)}
+\newcommand{\textN}{\(\N\)}
+\newcommand{\Real}{\mathrm{Re}}
+\newcommand{\Imag}{\mathrm{Im}}
+\newcommand{\im}{\text{im}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\nullity}{\text{nullity}}
+\newcommand{\vspan}{\text{span}}
+\newcommand{\Log}{\text{Log}}
+\newcommand{\Arg}{\text{Arg}}
+\newcommand{\Alt}[1]{\text{Alt}^#1}
+\newcommand{\id}[1]{\text{id}_\text{#1}}
+\newcommand{\V}{\(V\)}
+\newcommand{\F}{\(F\)}
+\newcommand{\T}{\(T\)}
+\newcommand{\trace}{\text{trace}}
+\renewcommand{\arg}[1][]{\text{arg}_#1}
+\newcommand{\nderiv}[3]{\frac{d^{#1}#2}{d#3^{#1}}}
+\newcommand{\npderiv}[3]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
+\newcommand{\deriv}[2]{\frac{d#1}{d#2}}
+\newcommand{\pderiv}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\bigfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+\newcommand{\qeq}{~\overset{?}{=}~}
+\renewcommand{\choose}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\funcapply}[2]{#1\left(#2\right)}
+\newcommand{\p}[1]{\left(#1\right)}
+\newcommand{\sqbrack}[1]{\left[#1\right]}
+\newcommand{\curly}[1]{\left\{#1\right\}}
+\newcommand{\magnitude}[1]{\left|#1\right|}
+\newcommand{\iprod}[1]{\left\langle#1\right\rangle}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\notate}[2]{\underset{\text{#2}}{\underbrace{#1}}}
+\newcommand{\notateover}[2]{\overset{\text{#2}}{\overbrace{#1}}}
+\newcommand{\mathand}{\text{and}}
+\newcommand{\Hopital}{\overset{\text{H}}{=}}
+\newcommand{\sech}{\text{sech}}
+\newcommand{\bra}[1]{\left\langle{#1}\right|}
+\newcommand{\ket}[1]{\left|{#1}\right\rangle}
+\newcommand{\braket}[2]{\left\langle{#1}~\right|\left.{#2}\right\rangle}
+\newcommand{\twomatrix}[4]{\p{\begin{array}{rr}#1&#2\\#3&#4\end{array}}
+}
+\newcommand{\twovector}[2]{\p{\begin{array}{r}#1\\#2\end{array}}}
+\newcommand{\threematrix}[9]{\p{\begin{array}{rrr}#1&#2&#3\\#4&#5&#6\\#7&#8&#9\end{array}}
+}
+\newcommand{\nvector}[1]{\p{\begin{array}{r}#1\end{array}}}
+\newcommand{\nmatrix}[2]{\p{\begin{array}{#1}#2\end{array}}}
+\newcommand{\commutator}[2]{\sqbrack{#1,#2}}
+\newcommand{\anticommutator}[2]{\curly{#1,#2}}
+\newcommand{\cross}{\times}
+\newcommand{\dist}{\text{dist}}
+\newcommand{\curlylist}[2]{\left\{\begin{array}{#1}
+     #2
+\end{array}\right.}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{white},   
+    commentstyle=\color{gray},
+    keywordstyle=\color{Blue},
+    numberstyle=\tiny\color{Fuchsia},
+    stringstyle=\color{ForestGreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\newenvironment{solution}[1][]{
+\vspace{0.1in}
+\color{BlueViolet}#1
+}
+{
+\color{black}
+}
+\newenvironment{solproof}{
+\color{BlueViolet}\begin{proof}
+}
+{\end{proof}
+\color{black}
+}
+
+\setlength\parindent{0pt}
