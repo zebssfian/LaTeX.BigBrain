@@ -131,4 +131,24 @@
 \color{black}
 }
 
+\newcommand{\IH}[1]{#1}
+\newenvironment{induction}[4]{
+    \renewcommand{\IH}{#3}
+    \textbf{Base Case:} Show for \(n=#1\)
+    \begin{align}
+        #2
+    \end{align}
+    \textbf{Induction Hypothesis:} Suppose that for some \(k\in\N:k\geq#1\):
+    \begin{align}
+        #3
+    \end{align}
+    \textbf{Induction Step:} Given the Induction Hypothesis \(\IH\), show the property also holds for \(n=k+1\):
+    \begin{align}
+        #4
+    \end{align}
+    And thus, by Induction on n, we find this result to hold for all \(n\in\N:n\geq#1\).
+}
+{
+}
+
 \setlength\parindent{0pt}
