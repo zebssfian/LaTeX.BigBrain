@@ -68,7 +68,6 @@
 \newcommand{\norm}[1]{\left|\left|#1\right|\right|}
 \newcommand{\notate}[2]{\underset{\text{#2}}{\underbrace{#1}}}
 \newcommand{\notateover}[2]{\overset{\text{#2}}{\overbrace{#1}}}
-\newcommand{\evalat}[2]{\left.#1\right|_{#2}}
 \newcommand{\mathand}{\text{and}}
 \newcommand{\Hopital}{\overset{\text{H}}{=}}
 \newcommand{\sech}{\text{sech}}
@@ -92,6 +91,21 @@
 \newcommand{\curlylist}[2]{\left\{\begin{array}{#1}
      #2
 \end{array}\right.}
+\newcommand{\evalat}[2]{\left.#1\right|_{#2}}
+
+
+%replacement commands:
+\newcommand{\evalexpxaty}[3]{
+    \renewcommand{\x}{#2}
+    \left.#1\right|_{\x=#3}
+    \renewcommand{\x}{x}
+}
+
+\newcommand{\replacexinexp}[2]{
+    \renewcommand{\x}{#1}
+    #2
+    \renewcommand{\x}{x}
+}
 
 \lstdefinestyle{python}{
     backgroundcolor=\color{white},   
