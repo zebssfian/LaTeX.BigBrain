@@ -20,10 +20,21 @@
 \usepackage{soul}
 \usepackage{bbm}
 
+%computationy
+\usepackage{ifthen}
+\usepackage{intcalc}
+
+%particular fun colour stuffs
+\newcommand{\green}[1]{\color{green}#1\color{BlueViolet}}
+\newcommand{\red}[1]{\color{red}#1\color{BlueViolet}}
+\newcommand{\olive}[1]{\color{olive}#1\color{BlueViolet}}
+\newcommand{\orange}[1]{\color{orange}#1\color{BlueViolet}}
+\newcommand{\teal}[1]{\color{BlueGreen}#1\color{BlueViolet}}
+\newcommand{\violet}[1]{\color{violet}#1\color{BlueViolet}}
+\newcommand{\brown}[1]{\color{brown}#1\color{BlueViolet}}
 
 %a general replacement variable
 \newcommand{\x}{x}
-
 
 \newtheorem*{theorem}{Theorem}
 \newtheorem*{corollary}{Corollary}
@@ -86,15 +97,21 @@
 \newcommand{\nvector}[1]{\p{\begin{array}{r}#1\end{array}}}
 \newcommand{\nmatrix}[2]{\p{\begin{array}{#1}#2\end{array}}}
 \newcommand{\commutator}[2]{\sqbrack{#1,#2}}
+\newcommand{\evalcommutator}[2]{#1#2-#2#1}
 \newcommand{\anticommutator}[2]{\curly{#1,#2}}
+\newcommand{\evalanticommutator}[2]{#1#2+#2#1}
 \newcommand{\cross}{\times}
 \newcommand{\tensor}{\otimes}
-\newcommand{\Laplacian}{\nabla^2}
+\newcommand{\Laplacian}{\Delta}
 \newcommand{\dist}{\text{dist}}
 \newcommand{\curlylist}[2]{\left\{\begin{array}{#1}
      #2
 \end{array}\right.}
 \newcommand{\evalat}[2]{\left.#1\right|_{#2}}
+\newcommand{\units}[1]{\mathrm{#1}}
+% combinatorics expanders
+\newcommand{\expandnchoosek}[2]{\frac{\p{#1}!}{\p{#2}!\p{#1-\p{#2}}!}}
+\newcommand{\expandnpermutek}[2]{\frac{\p{#1}!}{\p{#1-\p{#2}}!}}
 
 
 %replacement commands:
@@ -110,6 +127,15 @@
     \renewcommand{\x}{x}
 }
 
+%do math commands
+\newcommand{\add}[2]{
+    \newcounter{int}
+    \addtocounter{int}{#1}
+    \addtocounter{int}{#2}
+    \theint
+}
+
+%code snippet formatting
 \lstdefinestyle{python}{
     backgroundcolor=\color{white},   
     commentstyle=\color{gray},
@@ -136,6 +162,7 @@
 {\end{lstlisting}
 }
 
+%handy dandy solution environments
 \newenvironment{solution}[1][]{
 \vspace{0.1in}
 \color{BlueViolet}#1
@@ -168,7 +195,7 @@
     \end{align}
     And thus, by Induction on n, we find this result to hold for all \(n\in\N:n\geq#1\).
 }
-{
+{\qed
 }
 
 \setlength\parindent{0pt}
