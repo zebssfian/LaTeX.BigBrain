@@ -1,7 +1,7 @@
 # LaTeX.BigBrain
 A place for big brain latex stylesheets
 
-Read the instructions lol; 
+Read the instructions; 
 
 I am by no means an expert in LaTeX, I just try to make my life a little bit easier.
 
