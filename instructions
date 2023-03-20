@@ -6,9 +6,12 @@ The holy grail of LaTeX templates for typeset assignments;
 The BigBrain.sty
 
 If you so choose to use this file:
-1) Please change the color of solution, otherwise people will be unnecessarily suspicious of you and I.
+1) Please change the color assigned to solutions via the color variable 'col', otherwise people will be unnecessarily suspicious of you and I.
 2) Look through my custom commands to familiarize yourself a bit with my formatting
 3) enjoy avoiding the pain of typing out \frac{\partial}{\partial} any time you want to write a \pderiv, among other things
+4) handy dandy formulas are sometimes baked in as their own special commands, like for the quadratic formula, some commutator identities, and some combinatoric functions.
+   If there's anything useful I'm missing that you would like to propose as an addition, let me know.
+5) auto-computing functions may come eventually for numerical stuff, I'll eventually go figure out how to do that.
 
 If anything is weird or you think it could be improved/you want to add your own custom commands to the BigBrain, let me know. I'll probably fix it or add your improvement if you make one.
 
