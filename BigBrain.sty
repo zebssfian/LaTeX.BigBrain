@@ -25,13 +25,21 @@
 \usepackage{intcalc}
 
 %particular fun colour stuffs
-\newcommand{\green}[1]{\color{green}#1\color{BlueViolet}}
-\newcommand{\red}[1]{\color{red}#1\color{BlueViolet}}
-\newcommand{\olive}[1]{\color{olive}#1\color{BlueViolet}}
-\newcommand{\orange}[1]{\color{orange}#1\color{BlueViolet}}
-\newcommand{\teal}[1]{\color{BlueGreen}#1\color{BlueViolet}}
-\newcommand{\violet}[1]{\color{violet}#1\color{BlueViolet}}
-\newcommand{\brown}[1]{\color{brown}#1\color{BlueViolet}}
+\colorlet{col}{BlueViolet}
+
+\newcommand{\green}[1]{\color{Green}#1\color{col}}
+\newcommand{\red}[1]{\color{red}#1\color{col}}
+\newcommand{\olive}[1]{\color{olive}#1\color{col}}
+\newcommand{\orange}[1]{\color{orange}#1\color{col}}
+\newcommand{\teal}[1]{\color{BlueGreen}#1\color{col}}
+\newcommand{\violet}[1]{\color{violet}#1\color{col}}
+\newcommand{\brown}[1]{\color{brown}#1\color{col}}
+\newcommand{\pink}[1]{\color{magenta}#1\color{col}}
+\newcommand{\blue}[1]{\color{blue}#1\color{col}}
+\newcommand{\lime}[1]{\color{lime}#1\color{col}}
+\newcommand{\black}[1]{\color{black}#1\color{col}}
+\newcommand{\gray}[1]{\color{gray}#1\color{col}}
+\newcommand{\grey}[1]{\color{gray}#1\color{col}}
 
 %a general replacement variable
 \newcommand{\x}{x}
@@ -100,6 +108,8 @@
 \newcommand{\evalcommutator}[2]{#1#2-#2#1}
 \newcommand{\anticommutator}[2]{\curly{#1,#2}}
 \newcommand{\evalanticommutator}[2]{#1#2+#2#1}
+\newcommand{\poisson}[2]{\left\{#1,#2\right\}}
+\newcommand{\evalpoisson}[2]{\pderiv{#1}{q_i}\pderiv{#2}{p_i}-\pderiv{#2}{q_i}\pderiv{#1}{p_i}}
 \newcommand{\commutatordecompleft}[3]{\commutator{{#1}}{{#3}}{#2}+{#1}\commutator{{#2}}{{#3}}}
 \newcommand{\commutatordecompright}[3]{\commutator{{#1}}{{#2}}{#3}+{#2}\commutator{{#1}}{{#3}}}
 \newcommand{\cross}{\times}
@@ -114,6 +124,15 @@
 % combinatorics expanders
 \newcommand{\expandnchoosek}[2]{\frac{\p{#1}!}{\p{#2}!\p{#1-\p{#2}}!}}
 \newcommand{\expandnpermutek}[2]{\frac{\p{#1}!}{\p{#1-\p{#2}}!}}
+
+\newcommand{\n}{\vspace{0.1in}\newline}%endline with space
+\newcommand{\del}{\partial}
+
+%formula expanders
+\newcommand{\quadformula}[3]{\frac{-\p{#2}\pm\sqrt{\p{#2}^2-4\p{#1}\p{#3}}}{2\p{#1}}}
+
+%GR stuff with indices
+\newcommand{\lowup}[2]{_{#1}^{\color{white}#1\color{col}#2}}
 
 
 %replacement commands:
@@ -167,14 +186,14 @@
 %handy dandy solution environments
 \newenvironment{solution}[1][]{
 \vspace{0.1in}
-\color{BlueViolet}#1
+\color{col}#1
 }
 {
 \color{black}
 }
 
 \newenvironment{solproof}{
-\color{BlueViolet}\begin{proof}
+\color{col}\begin{proof}
 }
 {\end{proof}
 \color{black}
