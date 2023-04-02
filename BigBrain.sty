@@ -79,6 +79,7 @@
 \newcommand{\deriv}[2]{\frac{d#1}{d#2}}
 \newcommand{\pderiv}[2]{\frac{\partial#1}{\partial#2}}
 \newcommand{\bigfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+\newcommand{\smolfrac}[2]{#1/#2}
 \newcommand{\qeq}{~\overset{?}{=}~}
 \renewcommand{\choose}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
 \newcommand{\funcapply}[2]{#1\left(#2\right)}
@@ -109,7 +110,7 @@
 \newcommand{\anticommutator}[2]{\curly{#1,#2}}
 \newcommand{\evalanticommutator}[2]{#1#2+#2#1}
 \newcommand{\poisson}[2]{\left\{#1,#2\right\}}
-\newcommand{\evalpoisson}[2]{\pderiv{#1}{q_i}\pderiv{#2}{p_i}-\pderiv{#2}{q_i}\pderiv{#1}{p_i}}
+\newcommand{\evalpoisson}[3]{\pderiv{#1}{q_{#3}}\pderiv{#2}{p_{#3}}-\pderiv{#2}{q_{#3}}\pderiv{#1}{p_{#3}}}
 \newcommand{\commutatordecompleft}[3]{\commutator{{#1}}{{#3}}{#2}+{#1}\commutator{{#2}}{{#3}}}
 \newcommand{\commutatordecompright}[3]{\commutator{{#1}}{{#2}}{#3}+{#2}\commutator{{#1}}{{#3}}}
 \newcommand{\cross}{\times}
@@ -126,6 +127,9 @@
 \newcommand{\expandnpermutek}[2]{\frac{\p{#1}!}{\p{#1-\p{#2}}!}}
 
 \newcommand{\n}{\vspace{0.1in}\newline}%endline with space
+\newcommand{\nalign}{\nonumber\\&\quad}
+
+\newcommand{\vop}[1]{\hat{\mathbf{#1}}}
 \newcommand{\del}{\partial}
 
 %formula expanders
